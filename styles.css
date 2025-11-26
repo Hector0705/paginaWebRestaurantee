@@ -1,0 +1,324 @@
+:root {
+
+    --color-primario: #83634d; 
+    --color-fondo: #f4f4f4;  
+    --color-texto: #333;    
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+/* --- ENCABEZADO --- */
+header {
+    background-color: var(--blanco); 
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-vertical {
+    margin-top: 50px;
+    flex-direction: column; 
+    align-items: stretch;   
+    justify-content: flex-start; 
+}
+
+.contenedor-vertical .titulo-seccion {
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 60px;
+}
+
+nav ul li a {
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* SECCION INICIO */
+#inicio {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('imagenes/principal.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contenido {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inicio h1 {
+    font-family: 'Rye', serif;
+    font-size: 4rem;
+    color: #F5E6CA; 
+    text-transform: uppercase;
+    text-shadow: 4px 4px 6px rgba(0,0,0,0.9);
+    line-height: 1;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+#inicio p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--blanco);
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+    margin: 0;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.titulo-seccion::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-primario);
+    margin: 10px auto 0;
+}
+
+/* --- SECCIÓN MENÚ COMIDA --- */
+.categorias-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.subtitulo-categoria {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.8rem;
+    color: var(--color-primario);
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+        }
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-espacio {
+    margin-top: 20px;
+}
+
+.tarjeta-producto {
+    background: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info-producto {
+    padding: 20px;
+}
+
+.info-producto h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.info-producto p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabla-precios td {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.tabla-precios td:last-child {
+    text-align: right;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+/* --- SECCIÓN GALERÍA --- */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px; 
+    max-width: 800px; 
+    margin: 0 auto;   
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.02); 
+}
+
+/* --- SECCIÓN PROMOCIONES --- */
+.contenedor-promos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+        }
+
+.cupon {
+    background: var(--blanco);
+    border: 2px dashed var(--color-primario);
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+        }
+
+.cupon h3 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.cupon .descuento {
+    font-size: 3rem;
+    color: var(--color-primario);
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
+
+.cupon small {
+    display: block;
+    margin-top: 15px;
+    color: #777;
+}
+
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+footer {
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.footerg {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.columna-footer h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.columna-footer p, .col-footer li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    list-style: none;
+}
+        
+.creditos {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #000;
+    font-size: 0.8rem;
+    color: #aaa;
+}
